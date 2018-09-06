@@ -54,11 +54,19 @@ RSpec.describe PostsController, type: :controller do
       expect(subject.save).to equal(false)
     end
   end
+
   describe 'not saving a post' do
     it 'renders :new if post is missing params' do
       subject = Post.new(user_name: 'Mo')
       subject.save
       expect(response).to have_http_status(200)
+    end
+  end
+
+  describe 'not saving a post' do
+    it 'renders :new if post is missing params' do
+      subject = Post.new(message: 'Hello')
+      expect(subject.save).to equal(false)
     end
   end
 
