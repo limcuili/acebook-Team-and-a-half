@@ -64,7 +64,7 @@ As a user of Acebook,
 So that I can change previous posts,
 I would like to be able to update and delete my posts.
 ```
-:soon:
+:white_check_mark:
 
 ```
 [MVP]
@@ -86,21 +86,21 @@ As a user of Acebook,
 So that I can manage my online presence,  
 I would like a profile page (pictures, see your own posts).
 ```
-:soon:
+:white_check_mark:
 
 ```
 As a user,  
 So that I can show that I enjoyed a post,  
 I would like to be able to like a post.
 ```
-:soon:
+:white_check_mark:
 
 ```
 As a user of Acebook,  
 So that I know how many people enjoyed my post,  
 I would like to be able to see how many likes there are.
 ```
-:soon:
+:white_check_mark:
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
