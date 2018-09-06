@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-06T16:46:33+01:00">2018-09-06T16:46:33+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-09-06T17:22:42+01:00">2018-09-06T17:22:42+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">82.4%</span></span>
+    (<span class="covered_percent"><span class="yellow">83.68%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.89
+         0.91
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>42</b> files in total.
-    <b>267</b> relevant lines. 
-    <span class="green"><b>220</b> lines covered</span> and
+    <b>288</b> relevant lines. 
+    <span class="green"><b>241</b> lines covered</span> and
     <span class="red"><b>47</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -313,9 +313,9 @@
       <tr>
         <td class="strong"><a href="#b9aebbd88cca133a710502f2c4f9725a70bddb32" class="src_link" title="spec/controllers/posts_controller_spec.rb">spec/controllers/posts_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>52</td>
-        <td>28</td>
-        <td>28</td>
+        <td>86</td>
+        <td>49</td>
+        <td>49</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -714,15 +714,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.09
+         1.11
        </span>
     </span> hits/line)
   </h2>
   <a name="Ungrouped"></a>
   <div>
     <b>30</b> files in total.
-    <b>171</b> relevant lines. 
-    <span class="green"><b>171</b> lines covered</span> and
+    <b>192</b> relevant lines. 
+    <span class="green"><b>192</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -882,9 +882,9 @@
       <tr>
         <td class="strong"><a href="#b9aebbd88cca133a710502f2c4f9725a70bddb32" class="src_link" title="spec/controllers/posts_controller_spec.rb">spec/controllers/posts_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>52</td>
-        <td>28</td>
-        <td>28</td>
+        <td>86</td>
+        <td>49</td>
+        <td>49</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -3743,8 +3743,8 @@
     <h3>spec/controllers/posts_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>28</b> relevant lines. 
-      <span class="green"><b>28</b> lines covered</span> and
+      <b>49</b> relevant lines. 
+      <span class="green"><b>49</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3782,8 +3782,8 @@
           <code class="ruby">RSpec.describe PostsController, type: :controller do</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="6">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="9" data-linenumber="6">
+          <span class="hits">9</span>
           
           <code class="ruby">  subject { Post.new(user_name: &#39;Mo&#39;, message: &quot;Hello World&quot;) }</code>
         </li>
@@ -4025,7 +4025,7 @@
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;saves and redirects to posts_url&#39; do</code>
+          <code class="ruby">    it &#39;saves post if params are complete&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
@@ -4052,13 +4052,217 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;saving a post&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;saves post if params are complete&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject = Post.new(user_name: &#39;Mo&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(subject.save).to equal(false)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;not saving a post&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;renders :new if post is missing params&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject = Post.new(user_name: &#39;Mo&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;saving a post&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;redirects to posts_url if correct params&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;#destroy&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;destroys the post correctly&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.destroy</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;#destroy&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;updates the post correctly&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject = Post.new(user_name: &#39;Mo&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(subject.destroy).to_not have_http_status(200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
           
           
           <code class="ruby">end</code>
