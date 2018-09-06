@@ -549,7 +549,18 @@
         1,
         null,
         1,
-        2,
+        3,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/models/post.rb": [
@@ -557,6 +568,9 @@
         null,
         1,
         1,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/spec/models/user_spec.rb": [
@@ -626,6 +640,6 @@
         null
       ]
     },
-    "timestamp": 1536232490
+    "timestamp": 1536234918
   }
 }
