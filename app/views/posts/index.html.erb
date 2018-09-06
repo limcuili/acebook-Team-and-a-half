@@ -2,68 +2,86 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Show posts</title>
+    <title>Home</title>
   </head>
   <body>
+    <div class='posts_content'>
+      <div class='centered'>
+        <p class='posts_index_title ubuntu'>All Posts</p>
+      </div>
+      <div class="new-post-link">
+        <%= link_to new_post_path do %>
+          New post
+        <% end %>
+      </div>
+      <br>
+      <div class="posts-list">
+        <% @posts.each_with_index do |post, index| %>
+        <div class="single-post">
+          <div class='post_user_avatar'>
+            <%= image_tag((User.find_by(name: post.user_name)).avatar, :class => 'post_avatar') %>
+          </div>
+          <div class='single_post_content'>
+            <div class='post_text'>
+              <div class='post_top_line'>
+                <p class='post_author'><%= post.user_name %></p>
+                <small class='inline time_posted'>
+                  posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago
+                </small>
+                <% if post.user_name === current_user.name %>
+                <div class='inline edit_delete_links'>
+                  <tr>
+                      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+                      <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                </div>
+                <% end %>
+              </div>
+              <p class='post_message'><%= post.message %></p>
+              <div class='likes_div'>
+                <small class='inline'>
+                  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+                </small>
+                <% pre_like = post.likes.find { |like| like.user_name == current_user.name} %>
+                  <% if pre_like %>
+                    <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => 'button like_button', form: {:class => 'inline like_button'} %>
+                  <% else %>
+                    <%= button_to 'Like', post_likes_path(post), method: :post, :class => 'button', form: {:class => 'inline like_button'} %>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class='post_comments'>
+            <button id='comment-button<%= index + 1%>' class='collapsible commentsButton'>
+              <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
+            </button>
+            <div class='commentsContainer'>
+              <!-- Loop for comments -->
+              <% post.comments.each do |comment| %>
+                <div class="single-comment">
+                  <p>
+                    <strong><%= comment.user_name %></strong>: <%= comment.body %>
+                  </p>
+                </div>
+              <!-- End Loop -->
+              <% end %>
 
-  <div class="posts-list">
-    <% @posts.each_with_index do |post, index| %>
-    <div class="single-post">
-      <big><strong><%= post.user_name %></strong><br>
-      <%= post.message %><br></big>
-      <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
-    </div>
-    <small><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></small>
-    <% pre_like = post.likes.find { |like| like.user_name == current_user.name} %>
-      <% if pre_like %>
-        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => 'button' %>
-      <% else %>
-        <%= button_to 'Like', post_likes_path(post), method: :post, :class => 'button' %>
-      <% end %>
-    <button id='comment-button<%= index + 1%>' class='collapsible commentsButton'><%= post.comments.length %>
-      <% if post.comments.length === 1 %>
-        comment
-      <% else %>
-        comments
-      <% end %>
-    </button>
-    <div class='commentsContainer'>
-      <!-- Loop for comments -->
-      <% post.comments.each do |comment| %>
-        <div class="single-comment">
-          <p>
-            <strong><%= comment.user_name %></strong>: <%= comment.body %>
-          </p>
-        </div>
-      <!-- End Loop -->
-      <% end %>
-
-      <div>
-        <!-- Leave a comment form-->
-        <!-- array may not work, it generates a view for just the post-->
-        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-          <%= form.text_area :body, placeholder: "Leave a comment" %>
-          <br>
-          <%= form.submit 'Submit', :class => 'submit_button' %>
+              <div>
+                <!-- Leave a comment form-->
+                <!-- array may not work, it generates a view for just the post-->
+                <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+                  <%= form.text_area :body, placeholder: "Leave a comment" %>
+                  <br>
+                  <%= form.submit 'Submit', :class => 'submit_button' %>
+                <% end %>
+              </div>
+            </div>
+            <br>
+          </div>
         <% end %>
       </div>
     </div>
-    <br>
-      <% if post.user_name === current_user.name %>
-      <tr>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <% end %>
-      <br><br>
-    <% end %>
-  </div>
-
-  <div class="new-post-link">
-    <%= link_to new_post_path do %>
-      New post
-    <% end %>
-  </div>
 
 </body>
 </html>

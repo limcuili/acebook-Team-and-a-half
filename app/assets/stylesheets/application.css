@@ -57,6 +57,9 @@ body {
   font-size: 1.8em;
   float: left;
 }
+.grey_background {
+  background-color: #E0E0E0;
+}
 
 .log_in_or_out_link {
   margin: 0 0 0 5vw;
