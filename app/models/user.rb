@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: true
   validates :email, uniqueness: true
-  validates_presence_of :password , :name , :email
+  validates_presence_of :password, :name, :email
 
   has_one_attached :avatar
 end

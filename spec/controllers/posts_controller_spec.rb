@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  subject { Post.new(user_name: 'Mo', message: "Hello World") }
+  subject { Post.new(user_name: 'Mo', message: 'Hello World') }
 
   describe 'Post with missing params' do
     it 'has missing a message' do
@@ -90,5 +90,4 @@ RSpec.describe PostsController, type: :controller do
       expect(subject.destroy).to_not have_http_status(200)
     end
   end
-
 end

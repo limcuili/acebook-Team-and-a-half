@@ -46,5 +46,4 @@ RSpec.describe UsersController, type: :controller do
       expect(subject.save).to equal(false)
     end
   end
-
 end
