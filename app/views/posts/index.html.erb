@@ -18,7 +18,7 @@
       <div class="posts-list">
         <% @posts.each_with_index do |post, index| %>
         <div class="single-post">
-          <div class='post_user_avatar'>
+          <div>
             <%= image_tag((User.find_by(name: post.user_name)).avatar, :class => 'post_avatar') %>
           </div>
           <div class='single_post_content'>
@@ -37,7 +37,10 @@
                 </div>
                 <% end %>
               </div>
-              <p class='post_message'><%= post.message %></p>
+              <div class='post_message_div'>
+                <p class='post_message'><%= post.message %></p>
+              </div>
+              </div>
               <div class='likes_div'>
                 <small class='inline'>
                   <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
@@ -49,7 +52,6 @@
                     <%= button_to 'Like', post_likes_path(post), method: :post, :class => 'button', form: {:class => 'inline like_button'} %>
                   <% end %>
               </div>
-            </div>
           </div>
           </div>
           <div class='post_comments'>
@@ -57,19 +59,29 @@
               <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
             </button>
             <div class='commentsContainer'>
-              <!-- Loop for comments -->
               <% post.comments.each do |comment| %>
                 <div class="single-comment">
-                  <p>
-                    <strong><%= comment.user_name %></strong>: <%= comment.body %>
-                  </p>
+                  <div class='comment_user_avatar'>
+                    <%= image_tag((User.find_by(name: comment.user_name)).avatar, :class => 'comment_avatar') %>
+                  </div>
+                  <div class='single_comment_content'>
+                    <div class='comment_top_line'>
+                      <p class='comment_author'>
+                        <%= comment.user_name %>
+                      </p>
+                      <p class='inline comment_time_posted'>
+                        <small >
+                          posted <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
+                        </small>
+                      </p>
+                    </div>
+                    <p class='comment_message'>
+                      <%= comment.body %>
+                    </p>
+                  </div>
                 </div>
-              <!-- End Loop -->
               <% end %>
-
-              <div>
-                <!-- Leave a comment form-->
-                <!-- array may not work, it generates a view for just the post-->
+              <div class='comment_form'>
                 <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
                   <%= form.text_area :body, placeholder: "Leave a comment" %>
                   <br>
