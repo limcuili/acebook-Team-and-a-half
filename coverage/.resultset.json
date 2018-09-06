@@ -411,6 +411,48 @@
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/spec/controllers/users_controller_spec.rb": [
         1,
         null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -560,7 +602,6 @@
         1,
         1,
         null,
-        null,
         null
       ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/models/post.rb": [
@@ -570,12 +611,10 @@
         1,
         null,
         1,
-        null,
         null
       ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/spec/models/user_spec.rb": [
         1,
-        null,
         null,
         1,
         5,
@@ -640,6 +679,6 @@
         null
       ]
     },
-    "timestamp": 1536234918
+    "timestamp": 1536240688
   }
 }
