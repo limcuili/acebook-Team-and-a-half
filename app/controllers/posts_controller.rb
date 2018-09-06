@@ -35,7 +35,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    session[:return_to] = request.referer.to_s
+  end
 
   # DELETE /posts/1
   # DELETE /posts/1.json
