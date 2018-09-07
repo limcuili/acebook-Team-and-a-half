@@ -26,7 +26,6 @@
 
 .commentsContainer {
   display: none;
-
 }
 
 .comment_message {
@@ -56,6 +55,11 @@
   /* margin-left: 10vmin; */
   padding-left: 5vmin;
   padding-top: 1vh;
+}
+
+.scrollable_comments {
+  max-height: 20vh;
+  overflow-y: scroll;
 }
 
 .single-comment {

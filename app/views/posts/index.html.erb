@@ -59,6 +59,7 @@
               <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
             </button>
             <div class='commentsContainer'>
+              <div class='scrollable_comments'>
               <% post.comments.each do |comment| %>
                 <div class="single-comment">
                   <div class='comment_user_avatar'>
@@ -81,6 +82,7 @@
                   </div>
                 </div>
               <% end %>
+            </div>
               <div class='comment_form'>
                 <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
                   <%= form.text_area :body, placeholder: "Leave a comment" %>

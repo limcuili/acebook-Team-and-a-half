@@ -1,4 +1,4 @@
-<div class='profile_sidebar'
+<div class='profile_sidebar'>
   <%= form_for me_path do |form| %>
     <div class='centered'>
       <p class='avatar_label ubuntu'>
@@ -10,12 +10,14 @@
       <%= image_tag(@user.avatar, :class => 'profile_avatar') %>
     </div>
     <br>
-    <div class='avatar_url_field'>
-      <%= form.text_field :avatar, placeholder: 'Paste a URL here', value: nil, :class =>'centered_div' %>
-    </div>
+    <div class='avatar_url_div'>
+      <%= form.text_field :avatar, placeholder: 'Paste a URL here', value: nil, :class =>'centered_div', :id => 'avatar_url_field' %>
     <br>
-    <%= form.submit 'Update Avatar', :class => 'submit_button right' %>
+      <div class='avatar_submit_div'>
+        <%= form.submit 'Update Avatar', :class => 'submit_button right', :id => 'avatar_submit_button' %>
+      </div>
   <% end %>
+  </div>
 </div>
 <div class='posts_content_profile_page'>
   <div class='centered'>
@@ -60,6 +62,7 @@
           <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
         </button>
         <div class='commentsContainer'>
+          <div class='scrollable_comments'>
           <% post.comments.each do |comment| %>
             <div class="single-comment">
               <div class='comment_user_avatar'>
@@ -82,6 +85,7 @@
               </div>
             </div>
           <% end %>
+        </div>
           <div class='comment_form'>
             <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
               <%= form.text_area :body, placeholder: "Leave a comment" %>
