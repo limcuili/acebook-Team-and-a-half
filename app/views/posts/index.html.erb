@@ -10,7 +10,11 @@
     <!-- Below we have added the 'index' parameter for sake of testing so that comment blocks have unique id -->
     <% @posts.each_with_index do |post, index| %>
     <div class="single-post">
+      <% if post.user_name == current_user.name %>
+        <big><strong><%= post.user_name %></strong> <br>
+      <% else %>
       <big><strong><%= link_to post.user_name, post_profile_path(post.id) %></strong> <br>
+        <% end %>
       <%= post.message %><br></big>
       <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
