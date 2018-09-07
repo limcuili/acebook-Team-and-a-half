@@ -36,6 +36,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    session[:return_to] = request.referer.to_s
     @post.destroy
     respond_to do |format|
       format.html { redirect_to session[:return_to], notice: 'Post was successfully destroyed.' }

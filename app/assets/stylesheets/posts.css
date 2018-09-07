@@ -1,20 +1,145 @@
-.commentsButton {
-  background-color: Transparent;
-  border: none;
-  cursor:pointer;
-  padding: 0;
-  outline:none;
-  font-size: 0.8em;
+.button {
+  width: auto;
 }
 
-.commentsContainer {
-  display: none;
+.centered {
+  text-align: center;
+}
+
+.centered_image {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vmin;
+}
+
+.centered_div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit_delete_links {
+  float: right;
+  margin-right: 3vmin;
+}
+
+.inline {
+  display: inline;
+}
+
+.likes_div {
+  margin-right: 3vmin;
+  /* text-align: right; */
+}
+
+.like_button, .unlike_button{
+  color: #9646A1;
+  border: none;
+  outline: none;
+  background-color: Transparent;
+  cursor: pointer;
+
+}
+
+.new_post_field {
+  width: 20vw;
+  height: 8vh;
+  resize: none;
+}
+
+.posts_content {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.posts_content_profile_page {
+  width: 50%;
+  float: left;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.posts_index_title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.post_author {
+  font-weight: bold;
+  margin: 0;
+  float: left;
+  display: block;
+}
+
+.post_avatar {
+  object-fit: contain;
+  width: 10vmin;
+  height: 10vmin;
+  background-color: black;
+  float: left;
+  margin-right: 1vw;
+}
+
+.post_message {
+  font-size: 1em;
+  margin: 0.5vh 0 0 0;
+  width: 100%;
+  display: block;
+  margin-bottom: 0.5vh;
+  overflow: auto;
+}
+
+.post_message_div {
+}
+
+.profile_sidebar {
+  padding: 10vh 5vw 0 5vw;
+  width: 20%;
+  float: left;
+  height: 100%;
+  background-color: #468C98
+}
+
+.post_text {
+  height: auto;
+  width: 100%;
+  position: relative;
+}
+
+.post_top_line {
+  width: 100%;
+  height: 1.3em;
+  margin-bottom: 0.5vh;
+}
+
+.right {
+  float: right;
+}
+
+.single-post {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: white;
+  display: block;
+  position: relative;
+}
+
+.single_post_content {
+  width: calc(100% - 12vmin);
+  left: 11vmin;
+  display: block;
+  position: absolute;
 }
 
 .submit_button {
   width: auto;
 }
 
-.button {
-  width: auto;
+.time_posted {
+  float: right;
+  margin-right: 1vmin;
+}
+
+.ubuntu {
+  font-family: 'Ubuntu', sans-serif;
 }

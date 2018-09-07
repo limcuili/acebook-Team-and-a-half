@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20_180_905_165_532) do
     t.string 'name'
     t.string 'email'
     t.string 'password_digest'
-    t.string 'avatar', default: 'https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg'
+    t.text 'avatar', default: 'https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['name'], name: 'index_users_on_name', unique: true

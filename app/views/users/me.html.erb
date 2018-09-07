@@ -1,63 +1,95 @@
-<h1><%= @user.name %>'s Profile</h1>
-<br>
-<%= form_for me_path do |form| %>
-  <%= form.label :avatar %>
-  <br>
-  <%= image_tag(@user.avatar, :class => 'profile_avatar') %>
-  <br>
-  <%= form.text_field :avatar, placeholder: 'Paste a URL here', value: nil %>
-  <br>
-  <%= form.submit 'Update Avatar', :class => 'submit_button' %>
-<% end %>
-<br>
-
-<div class="posts-list">
-  <% @posts.each do |post| %>
-  <div class="single-post">
-    <big><strong><%= post.user_name %></strong><br>
-    <%= post.message %><br></big>
-    <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
-  </div>
-  <button class='collapsible commentsButton'><%= post.comments.length %>
-    <% if post.comments.length === 1 %>
-      comment
-    <% else %>
-      comments
-    <% end %>
-  </button>
-  <div class='commentsContainer'>
-    <!-- Loop for comments -->
-    <% post.comments.each do |comment| %>
-      <div class="single-comment">
-        <p>
-          <strong><%= comment.user_name %></strong>: <%= comment.body %>
-        </p>
-      </div>
-    <!-- End Loop -->
-    <% end %>
-
-    <div>
-      <!-- Leave a comment form-->
-      <!-- array may not work, it generates a view for just the post-->
-      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-        <%= form.text_area :body, placeholder: "Leave a comment" %>
-        <br>
-        <%= form.submit 'Submit', :class => 'submit_button' %>
-      <% end %>
+<div class='profile_sidebar'>
+  <%= form_for me_path do |form| %>
+    <div class='centered_image'>
+      <%= image_tag(@user.avatar, :class => 'profile_avatar') %>
     </div>
+    <br>
+    <div class='avatar_url_div'>
+      <%= form.text_field :avatar, placeholder: 'Paste a URL here', value: nil, :class =>'centered_div', :id => 'avatar_url_field' %>
+    <br>
+      <div class='avatar_submit_div'>
+        <%= form.submit 'Update Avatar', :class => 'submit_button right', :id => 'avatar_submit_button' %>
+      </div>
+  <% end %>
+  </div>
+</div>
+<div class='posts_content_profile_page'>
+  <div class='centered'>
+    <p class='posts_index_title ubuntu'><%= @user.name%>'s Posts</p>
+  </div>
+  <div class="new-post-link">
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
   </div>
   <br>
-    <% if post.user_name === current_user.name %>
-    <tr>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+  <div class="posts-list">
+    <% @posts.each_with_index do |post, index| %>
+    <div class="single-post">
+      <div>
+        <%= image_tag((User.find_by(name: post.user_name)).avatar, :class => 'post_avatar') %>
+      </div>
+      <div class='single_post_content'>
+        <div class='post_text'>
+          <div class='post_top_line'>
+            <p class='post_author'><%= post.user_name %></p>
+            <small class='inline time_posted'>
+              posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago
+            </small>
+            <% if post.user_name === current_user.name %>
+            <div class='inline edit_delete_links'>
+              <tr>
+                  <td><%= link_to 'Edit', edit_post_path(post) %></td>
+                  <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            </div>
+            <% end %>
+          </div>
+          <div class='post_message_div'>
+            <p class='post_message'><%= post.message %></p>
+          </div>
+          </div>
+      </div>
+      </div>
+      <div class='post_comments'>
+        <button id='comment-button<%= index + 1%>' class='collapsible commentsButton'>
+          <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
+        </button>
+        <div class='commentsContainer'>
+          <div class='scrollable_comments'>
+          <% post.comments.each do |comment| %>
+            <div class="single-comment">
+              <div class='comment_user_avatar'>
+                <%= image_tag((User.find_by(name: comment.user_name)).avatar, :class => 'comment_avatar') %>
+              </div>
+              <div class='single_comment_content'>
+                <div class='comment_top_line'>
+                  <p class='comment_author'>
+                    <%= comment.user_name %>
+                  </p>
+                  <p class='inline comment_time_posted'>
+                    <small >
+                      posted <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
+                    </small>
+                  </p>
+                </div>
+                <p class='comment_message'>
+                  <%= comment.body %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+          <div class='comment_form'>
+            <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+              <%= form.text_area :body, placeholder: "Leave a comment" %>
+              <br>
+              <%= form.submit 'Submit', :class => 'submit_button' %>
+            <% end %>
+          </div>
+        </div>
+        <br>
+      </div>
     <% end %>
-    <br><br>
-  <% end %>
-</div>
-<div class="new-post-link">
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
+  </div>
 </div>
