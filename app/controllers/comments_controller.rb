@@ -2,10 +2,11 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params)
+    @comment = @post.comments.new(comment_params)
+    flash[:notice] = "Comment can't be blank" unless @comment.valid?
     redirect_to '/posts'
   end
-
+# {"body"=>["can't be blank"]}
   private
 
   def comment_params

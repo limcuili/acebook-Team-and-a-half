@@ -5,6 +5,7 @@
         1,
         null,
         1,
+        null,
         null
       ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/spec/rails_helper.rb": [
@@ -305,6 +306,7 @@
         0,
         0,
         0,
+        0,
         null,
         null,
         1,
@@ -440,7 +442,6 @@
         1,
         1,
         1,
-        null,
         null,
         null,
         null
@@ -595,7 +596,6 @@
         1,
         null,
         null,
-        null,
         null
       ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/controllers/users_controller.rb": [
@@ -738,9 +738,23 @@
         null,
         1,
         1,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/models/comment.rb": [
+        1,
         1,
         1,
         null
@@ -748,6 +762,15 @@
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/models/application_record.rb": [
         null,
         null,
+        1,
+        1,
+        null
+      ],
+      "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/models/post.rb": [
+        null,
+        null,
+        1,
+        1,
         1,
         1,
         null
@@ -771,15 +794,6 @@
         null,
         null
       ],
-      "/Users/farahjabri/Desktop/acebook-Team-and-a-half/app/models/post.rb": [
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/farahjabri/Desktop/acebook-Team-and-a-half/spec/models/user_spec.rb": [
         1,
         null,
@@ -787,8 +801,8 @@
         5,
         1,
         1,
-        1,
-        1,
+        null,
+        null,
         1,
         1,
         1,
@@ -797,16 +811,8 @@
         1,
         1,
         1,
-        1,
         null,
         null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
         1,
         1,
         1,
@@ -846,6 +852,6 @@
         null
       ]
     },
-    "timestamp": 1536263826
+    "timestamp": 1536315681
   }
 }
