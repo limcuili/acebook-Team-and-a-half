@@ -1,0 +1,43 @@
+<h1><%= @friend.name %>'s Profile</h1>
+<br>
+<%= form_for me_path do |form| %>
+  <%= form.label :avatar %>
+  <br>
+  <%= image_tag(@friend.avatar, :class => 'profile_avatar') %>
+<% end %>
+<br>
+
+<div class="posts-list">
+  <% @posts.each do |post| %>
+  <div class="single-post">
+    <big><strong><%= post.user_name %></strong><br>
+    <%= post.message %><br></big>
+    <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
+  </div>
+  <button class='collapsible commentsButton'><%= post.comments.length %>
+    <% if post.comments.length === 1 %>
+      comment
+    <% else %>
+      comments
+    <% end %>
+  </button>
+  <div class='commentsContainer'>
+    <% post.comments.each do |comment| %>
+      <div class="single-comment">
+        <p>
+          <strong><%= comment.user_name %></strong>: <%= comment.body %>
+        </p>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+        <%= form.text_area :body, placeholder: "Leave a comment" %>
+        <br>
+        <%= form.submit 'Submit', :class => 'submit_button' %>
+      <% end %>
+    </div>
+  </div>
+    <br><br>
+  <% end %>
+</div>
