@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def update_avatar
     @user = current_user
     @user.update_attributes(avatar: params['/me'][:avatar])
+    @user.update_column(:avatar,params['/me'][:avatar])
     redirect_to '/me'
   end
 
