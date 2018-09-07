@@ -1,10 +1,13 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #E6ecf0 !important;
+}
+
 h2 {
-  font-family: 'Ubuntu', sans-serif;
   font-size: 50px;
 }
 
 label{
-  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
   margin-bottom: 200px !important;
 }
@@ -13,6 +16,7 @@ input{
   width: 280px;
   height: 35px;
 }
+
 
 #avatar_submit_button {
   margin: 0;
@@ -25,6 +29,8 @@ input{
   margin-right: auto;
   border: 0;
 }
+
+
 
 .avatar_label {
   font-weight: bold;
@@ -48,6 +54,10 @@ input{
   display: flex;
   width: 100%;
   height: 100%;
+}
+
+.posts_index_title{
+  font-size: 60px;
 }
 
 .profile_avatar {
@@ -87,6 +97,18 @@ input{
 }
 
 .sign_up_submit, .sign_in_submit {
-  width: 65px;
+  width: 100px;
+  height: 35px;
+  color: #468C98;
+  font-weight: bold;
+  border-style: solid !important;
+  border-color: #468C98;
+  border-width: 2px;
   float: right;
+}
+
+.sign_up_submit:hover, .sign_in_submit:hover{
+  border-color: white;
+  background-color: #468C98;
+  color: white;
 }

@@ -26,6 +26,7 @@
 
 .commentsContainer {
   display: none;
+  margin-right: 5vmin;
 }
 
 .comment_message {
@@ -34,7 +35,15 @@
 
 .comment_form {
   margin-top: 1vh;
-  margin-left: 6vmin;
+  margin-left: 5vmin;
+}
+
+.comment_text_area {
+  resize: none;
+  width: 100%;
+  padding: 0;
+  border: none;
+  height: 5vmin;
 }
 
 .comment_time_posted {

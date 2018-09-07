@@ -33,8 +33,14 @@
   position: absolute;
 }
 
-.like_button {
+.like_button, .unlike_button{
   margin-left: 1vw;
+  color: #9646A1;
+  border: none;
+  outline: none;
+  background-color: Transparent;
+  cursor: pointer;
+
 }
 
 .new_post_field {
@@ -122,10 +128,12 @@
 }
 
 .single_post_content {
-  height: 100%;
-  width: calc(100% - 11vmin);
+  padding: 10px;
+  height: 80%;
+  width: calc(100% - 12vmin);
   left: 11vmin;
   display: block;
+  margin-bottom: 10px;
   position: absolute;
 }
 

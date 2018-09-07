@@ -47,10 +47,15 @@
                 </small>
                 <% pre_like = post.likes.find { |like| like.user_name == current_user.name} %>
                   <% if pre_like %>
-                    <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => 'button like_button', form: {:class => 'inline like_button'} %>
+                    <%= button_to post_like_path(post, pre_like), method: :delete, :class => 'button unlike_button', form: {:class => 'inline unlike_button'} do %>
+                    <i class="fas fa-heart"></i>
+                    <% end %>
                   <% else %>
-                    <%= button_to 'Like', post_likes_path(post), method: :post, :class => 'button', form: {:class => 'inline like_button'} %>
+                    <%= button_to post_likes_path(post), method: :post, :class => 'button like_button', form: {:class => 'inline like_button'} do %>
+                    <i class="far fa-heart"></i>
+                    <% end %>
                   <% end %>
+
               </div>
           </div>
           </div>
@@ -85,7 +90,7 @@
             </div>
               <div class='comment_form'>
                 <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-                  <%= form.text_area :body, placeholder: "Leave a comment" %>
+                  <%= form.text_area :body, placeholder: "Leave a comment", :class => 'comment_text_area' %>
                   <br>
                   <%= form.submit 'Submit', :class => 'submit_button' %>
                 <% end %>
