@@ -9,7 +9,7 @@
 .centered_image {
   margin-left: auto;
   margin-right: auto;
-  width: 18vmin;
+  width: 30vmin;
 }
 
 .centered_div {
@@ -27,14 +27,11 @@
 }
 
 .likes_div {
-  bottom: 0;
-  width: 100%;
-  margin-top: 0.5vh;
-  position: absolute;
+  margin-right: 3vmin;
+  /* text-align: right; */
 }
 
 .like_button, .unlike_button{
-  margin-left: 1vw;
   color: #9646A1;
   border: none;
   outline: none;
@@ -50,7 +47,7 @@
 }
 
 .posts_content {
-  width: 50%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -69,7 +66,6 @@
 
 .post_author {
   font-weight: bold;
-  font-size: 1.3em;
   margin: 0;
   float: left;
   display: block;
@@ -86,10 +82,11 @@
 
 .post_message {
   font-size: 1em;
-  margin: 0;
+  margin: 0.5vh 0 0 0;
+  width: 100%;
   display: block;
-  left: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0.5vh;
+  overflow: auto;
 }
 
 .post_message_div {
@@ -112,7 +109,7 @@
 .post_top_line {
   width: 100%;
   height: 1.3em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5vh;
 }
 
 .right {
@@ -121,19 +118,16 @@
 
 .single-post {
   width: 100%;
-  overflow: auto;
+  overflow-x: hidden;
   background-color: white;
   display: block;
   position: relative;
 }
 
 .single_post_content {
-  padding: 10px;
-  height: 80%;
   width: calc(100% - 12vmin);
   left: 11vmin;
   display: block;
-  margin-bottom: 10px;
   position: absolute;
 }
 

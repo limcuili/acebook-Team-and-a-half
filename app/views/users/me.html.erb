@@ -1,11 +1,5 @@
 <div class='profile_sidebar'>
   <%= form_for me_path do |form| %>
-    <div class='centered'>
-      <p class='avatar_label ubuntu'>
-        <%= form.label :avatar, :class => 'avatar_label' %>
-      </p>
-    </div>
-    <br>
     <div class='centered_image'>
       <%= image_tag(@user.avatar, :class => 'profile_avatar') %>
     </div>

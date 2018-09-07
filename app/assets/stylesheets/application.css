@@ -19,6 +19,10 @@ a {
   text-decoration: none;
 }
 
+a.friend_link {
+  color: black;
+}
+
 body {
   width: 100vw;
   height: 100vh;

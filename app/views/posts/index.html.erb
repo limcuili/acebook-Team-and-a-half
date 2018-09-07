@@ -22,18 +22,32 @@
             <%= image_tag((User.find_by(name: post.user_name)).avatar, :class => 'post_avatar') %>
           </div>
           <div class='single_post_content'>
-            <div class='post_text'>
               <div class='post_top_line'>
                 <% if post.user_name == current_user.name %>
-                  <p class='post_author'><%= post.user_name %></p> <br>
+                  <p class='post_author inline'><%= post.user_name %></p>
                 <% else %>
-                <p class='post_author'><%= link_to post.user_name, post_profile_path(post.id) %></p> <br>
+                <p class='post_author inline'><%= link_to post.user_name, post_profile_path(post.id), :class => 'friend_link' %></p>
                   <% end %>
-                <small class='inline time_posted'>
+                <small class='inline time_posted right'>
                   posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago
                 </small>
+                <div class='likes_div right inline'>
+                  <small class='inline'>
+                    <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+                  </small>
+                  <% pre_like = post.likes.find { |like| like.user_name == current_user.name} %>
+                    <% if pre_like %>
+                      <%= button_to post_like_path(post, pre_like), method: :delete, :class => 'button unlike_button', form: {:class => 'inline unlike_button'} do %>
+                      <i class="fas fa-heart"></i>
+                      <% end %>
+                    <% else %>
+                      <%= button_to post_likes_path(post), method: :post, :class => 'button like_button', form: {:class => 'inline like_button'} do %>
+                      <i class="far fa-heart"></i>
+                      <% end %>
+                    <% end %>
+                </div>
                 <% if post.user_name === current_user.name %>
-                <div class='inline edit_delete_links'>
+                <div class='inline edit_delete_links right'>
                   <tr>
                       <td><%= link_to 'Edit', edit_post_path(post) %></td>
                       <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -43,23 +57,6 @@
               </div>
               <div class='post_message_div'>
                 <p class='post_message'><%= post.message %></p>
-              </div>
-              </div>
-              <div class='likes_div'>
-                <small class='inline'>
-                  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-                </small>
-                <% pre_like = post.likes.find { |like| like.user_name == current_user.name} %>
-                  <% if pre_like %>
-                    <%= button_to post_like_path(post, pre_like), method: :delete, :class => 'button unlike_button', form: {:class => 'inline unlike_button'} do %>
-                    <i class="fas fa-heart"></i>
-                    <% end %>
-                  <% else %>
-                    <%= button_to post_likes_path(post), method: :post, :class => 'button like_button', form: {:class => 'inline like_button'} do %>
-                    <i class="far fa-heart"></i>
-                    <% end %>
-                  <% end %>
-
               </div>
           </div>
           </div>

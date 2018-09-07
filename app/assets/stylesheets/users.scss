@@ -30,11 +30,9 @@ input{
   border: 0;
 }
 
-
-
 .avatar_label {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 6vmin;
   margin: 0;
 }
 
@@ -62,8 +60,8 @@ input{
 
 .profile_avatar {
   object-fit: contain;
-  width: 18vmin;
-  height: 18vmin;
+  width: 30vmin;
+  height: 30vmin;
   background-color: black;
 }
 
@@ -105,6 +103,14 @@ input{
   border-color: #468C98;
   border-width: 2px;
   float: right;
+}
+
+.sign_in_submit:focus {
+  outline: none;
+}
+
+.sign_up_submit:focus {
+  outline: none;
 }
 
 .sign_up_submit:hover, .sign_in_submit:hover{
