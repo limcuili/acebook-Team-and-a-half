@@ -25,4 +25,9 @@ Rails.application.routes.draw do
 
   get '/me' => 'users#me'
   post '/me' => 'users#update_avatar'
+
+  resources :post do
+    get '/profile/' => 'profiles#show'
+  end
+
 end
