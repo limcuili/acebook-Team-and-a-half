@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     session[:return_to] = request.referer.to_s
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
+    flash[:notice] = "Comment can't be blank" unless @comment.valid?
     redirect_to session[:return_to]
   end
 
