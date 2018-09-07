@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     flash[:notice] = "Comment can't be blank" unless @comment.valid?
     redirect_to '/posts'
   end
-# {"body"=>["can't be blank"]}
+
   private
 
   def comment_params
