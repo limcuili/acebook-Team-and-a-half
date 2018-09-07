@@ -29,5 +29,4 @@ Rails.application.routes.draw do
   resources :post do
     get '/profile/' => 'profiles#show'
   end
-
 end
