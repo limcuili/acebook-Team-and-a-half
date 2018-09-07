@@ -12,5 +12,4 @@ class ProfilesController < ApplicationController
   def find_post
     @post = Post.find(params[:post_id])
   end
-
 end
