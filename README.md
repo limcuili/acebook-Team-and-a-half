@@ -23,7 +23,7 @@ Key:
 [MVP]
 As a user of the web,  
 So that I can enjoy Acebook,  
-I would like be able to sign up.
+I would like to be able to sign up.
 ```
 :white_check_mark:
 
@@ -31,7 +31,7 @@ I would like be able to sign up.
 [MVP]
 As a user of Acebook,  
 So that I can accumulate a profile,  
-I would like be able to log in to my existing account.
+I would like to be able to log in to my existing account.
 ```
 :white_check_mark:
 
@@ -39,7 +39,7 @@ I would like be able to log in to my existing account.
 [MVP]
 As a user of Acebook,  
 So that I can express myself,  
-I would like be able to post.
+I would like to be able to post.
 ```
 :white_check_mark:
 
@@ -75,16 +75,9 @@ I would like to be able to comment on a post.
 :white_check_mark:
 
 ```
-As a user of Acebook,
-So that I can change my previous comments,
-I would like to be able to update and delete my comments.
-```
-:x:
-
-```
 As a user of Acebook,  
 So that I can manage my online presence,  
-I would like a profile page (pictures, see your own posts).
+I would like a profile page with my picture and my posts.
 ```
 :white_check_mark:
 
@@ -98,7 +91,14 @@ I would like to be able to like a post.
 ```
 As a user of Acebook,  
 So that I know how many people enjoyed my post,  
-I would like to be able to see how many likes there are.
+I would like to be able to see how many likes there are on a post.
+```
+:white_check_mark:
+
+```
+As a user of Acebook,  
+So that I can see what other people have posted,  
+I would like to be able to see other people's profiles.
 ```
 :white_check_mark:
 
