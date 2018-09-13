@@ -4,10 +4,10 @@
 
 *Team Members*: [Lim Cui Li](https://github.com/limcuili), [Marek Schmidt](https://github.com/Mschmidt19), [Kirt Singh](https://github.com/kirtimansingh93), [Farah Jabri](https://github.com/fabjab86), [Steph Fashagba](https://github.com/stephfash), [Evie Kim](https://github.com/Eviekim)  
 *Timeframe*: 9 days over two weeks  
-*Frameworks*: Ruby on Rails
-*Linters/Tests/Coverage*: RuboCop, Travis, RSpec, SimpleCov
-*Deployment*: Heroku
-*Wireframe*: Adobe XD
+*Frameworks*: Ruby on Rails  
+*Linters/Tests/Coverage*: RuboCop, Travis, RSpec, SimpleCov  
+*Deployment*: Heroku  
+*Wireframe*: Adobe XD  
 
 
 [![Build Status](https://travis-ci.org/fabjab86/acebook-Team-and-a-half.svg?branch=master)](https://travis-ci.org/fabjab86/acebook-Team-and-a-half)
