@@ -12,9 +12,6 @@
 
 [![Build Status](https://travis-ci.org/fabjab86/acebook-Team-and-a-half.svg?branch=master)](https://travis-ci.org/fabjab86/acebook-Team-and-a-half)
 
-Fork this repository to `acebook-teamname` and customize
-the below**
-
 You can find the engineering project outline <a href="https://github.com/makersacademy/course/tree/master/engineering_projects/rails">here</a>
 
 The card wall is <a href="https://trello.com/b/ArBRnnAK/acebook">here</a>
